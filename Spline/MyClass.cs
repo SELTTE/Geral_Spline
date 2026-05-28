@@ -1,10 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.EditorInput;
+﻿using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.Geometry;
+using Autodesk.AutoCAD.Runtime;
+using Seltte.AutoCAD.AcadToolkit.License;
+using System;
+using System.Windows.Forms;
 
 namespace MySpline
 {
@@ -16,7 +17,7 @@ namespace MySpline
         [CommandMethod("ss")]
         public static void AddSpline()
         {
-            if (!Ativacao())
+            if (!LicenseGuard.IsLicensed())
             {
                 MessageBox.Show("Esta API não está ativada. Entre em contato com a SELTTE!");
                 return;
@@ -130,33 +131,5 @@ namespace MySpline
                                 pPt.Y + dDist * Math.Sin(dAng));
         }
 
-        static bool Ativacao()
-        {
-            bool ativacao = true;
-            object autocadAtiv;
-
-            try
-            {
-                RegistryKey autocad = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Autodesk\AutoCAD\");
-                object autocadCurver = autocad.GetValue("CurVer");
-                autocad = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Autodesk\AutoCAD\" + autocadCurver + @"\");
-                object autocadLang = autocad.GetValue("CurVer");
-                autocad = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Autodesk\AutoCAD\" + autocadCurver +
-                    @"\" + autocadLang + @"\Applications\");
-                autocadAtiv = autocad.GetValue("1");
-            }
-            catch (System.Exception)
-            {
-                ativacao = false;
-                throw;
-            }
-
-            if (autocadAtiv == null)
-            {
-                ativacao = false;
-            }
-
-            return ativacao;
-        }
     }
 }

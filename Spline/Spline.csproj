@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Spline</RootNamespace>
     <AssemblyName>Spline%28SS%29</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -46,6 +46,12 @@
     </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Seltte.AutoCAD.AcadToolkit">
+      <HintPath>..\..\Seltte.AutoCAD\src\Seltte.AutoCAD.AcadToolkit\bin\Release\net48\Seltte.AutoCAD.AcadToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Seltte.AutoCAD.LicenseChecker">
+      <HintPath>..\..\Seltte.AutoCAD\src\Seltte.AutoCAD.AcadToolkit\bin\Release\net48\Seltte.AutoCAD.LicenseChecker.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
