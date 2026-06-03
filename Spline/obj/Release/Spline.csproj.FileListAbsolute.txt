@@ -1,4 +1,0 @@
-C:\Users\lino.cc\Source\Repos\Spiline\Spline\obj\Release\Spline.csprojAssemblyReference.cache
-C:\Users\lino.cc\Source\Repos\Spiline\Spline\obj\Release\Spline.csproj.CoreCompileInputs.cache
-C:\Users\lino.cc\Source\Repos\Spiline\Spline\bin\Release\Spline(SS).dll
-C:\Users\lino.cc\Source\Repos\Spiline\Spline\obj\Release\Spline(SS).dll
